@@ -1,20 +1,209 @@
+$font: roboto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+$margin: 1.5rem ;
+$clr-primaire: #9356dc;
+$clr-secondaire: #ff79da;
+$clr-tertiaire: #99e2d0;
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+    
+}
+h1{
+    font-family: $font;
+}
+h2{
+    font-family: $font;
+}
+p{
+    font-family: $font;
+}
+li{
+    font-family: $font;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family: $font;
+}
+.spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.spinner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    overflow: hidden;
+    background: black;
+    opacity: 0.6;
+    animation: back 3s linear forwards;
+    
+}
+@keyframes back {
+    0% { 
+        opacity: 0.6;
+    }
+    80%{
+        opacity: 0.6;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+.spinner::after {
+    box-sizing: border-box;
+    z-index: 12;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    border: 3px solid $clr-primaire;
+    border-top: 3px solid $clr-secondaire;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: custom-loading 2s linear 1 forwards;
+    
+}
+@keyframes custom-loading {
+    0% { 
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.8;
+    }
+    100% { 
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
 .header{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 7rem;
     &__box{
         width: 100%;
         height: 7rem;
         text-align: center;
     }
     &__logo{
-    width: 40%;
-    margin: 1rem 0 1rem 0;
+    width: 60%;
+    margin-top: 2rem;
     }   
+}
+.box-localisation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .localisation{
     width: 100%;
-    background-color: gray;
+    height: 4rem;
+    background-color: rgba(185, 183, 183, 0.432);
+    border-top: 3px solid gray;
     text-align: center;
     color: black;
+    display: flex;
+    justify-content: center;
+    &__ville{
+        font-size: 20px;
+    }
+}
+.logo_maps{
+    font-size: 1.5rem;
+    margin: 1rem 1rem 0 0;
+}
+.reservation{
+    width: 100%;
+    height: 18rem;
+    background-color: rgba(241, 241, 241, 0.973);
+    @include column; 
+    align-items: center;
+    &__titre{
+        width: 70%;
+        text-align: center;
+        margin: 2rem 0 0 0;
+    }
+    &__texte{
+        width: 90%;
+        font-size: 1.25rem;
+        text-align: center;
+        margin: 1.5rem 0;
+        color: rgb(100, 100, 100);
+    }
+    &__lien{
+        width: 60%;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient($clr-secondaire,$clr-primaire);
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+        box-shadow: 1px 1px 5px 1px gray;
+        z-index: 1;
+        &:active{
+            &::after{
+                content:"";
+                position: absolute;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                box-shadow: 2px 2px 5px 2px red;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+            }
+            
+        }
+    }
+
+}
+.fonctionnement{
+    margin:  2rem 0 3rem $margin;
+    height: 25rem;
+    &__titre{
+        margin:4rem 0 0 0;
+    }
+    &__box-liste{
+        @include column();
+        justify-content: space-around;
+    }  
+    &__liste{
+        list-style: none;
+        padding: 0;
+    }
+   
+    &__element{
+        display: flex;
+        background-color:rgba(241, 241, 241, 0.973) ;
+        border-radius: 2rem;
+        margin-top: 1.5rem;
+        padding: 2rem 2rem 2rem 0;
+    }
+    &__numero{
+        width: 1.5rem;
+        height: 1.3rem;
+        padding-top: 0.2rem;
+        border-radius: 1rem;
+        margin-left: -0.8rem;
+        text-align: center;
+        background-color: $clr-primaire;
+        color: white;
+    }
+    &__item{
+        font-size:1.5rem;
+        margin: 0 2rem 0 2rem;
+        color: rgb(100, 100, 100);
+    }
 }

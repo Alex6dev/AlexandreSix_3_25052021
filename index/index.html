@@ -10,33 +10,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="spinner">
     <header class="header">
         <section class="header__box">
             <img src="../images/logo/ohmyfood.png" alt="logo oh my food" class="header__logo">
         </section>
     </header>
     <main>
-        <section class="localisation">
-            <p>
-                <i class="fas fa-map-marker-alt"></i>Paris,Belleville
-            </p>
+        <section class="box-localisation">
+            <div class="localisation">
+                <i class="fas fa-map-marker-alt logo_maps" ></i>
+                <p class="localisation__ville">
+                    Paris,Belleville
+                </p>
+            </div>
         </section>
-        <section>
-            <h1>Réservez le menu qui vous convient</h1>
-            <p>
+        <section class="reservation">
+            <h1 class="reservation__titre">Réservez le menu qui vous convient</h1>
+            <p class="reservation__texte">
                 Découvrez des restaurants d'exception, séléctionnés par nos soins.
             </p>
-            <a href="#restaurants">Explorer nos restaurants</a>
+            <a href="#restaurants" class="reservation__lien">Explorer nos restaurants</a>
         </section>
-        <section>
-            <h2>Fonctionnement</h2>
-            <div>
-                <ol>
-                    <li><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</li>
-                    <li><i class="fas fa-list-ul"></i>Composez votre menu</li>
-                    <li><i class="fas fa-store"></i>Dégustez au restautant</li>
-                </ol>
+        <section class="fonctionnement">
+            <h2 class="fonctionnement__titre">Fonctionnement</h2>
+            <div class="fonctionnement__box-liste">
+                <ul class="fonctionnement__liste">
+                    <li class="fonctionnement__element"><div class="fonctionnement__numero">1</div><i class="fas fa-mobile-alt fonctionnement__item"></i>Choisissez un restaurant</li>
+                    <li class="fonctionnement__element"><div class="fonctionnement__numero">2</div><i class="fas fa-list-ul fonctionnement__item"></i>Composez votre menu</li>
+                    <li class="fonctionnement__element"><div class="fonctionnement__numero">3</div><i class="fas fa-store fonctionnement__item"></i>Dégustez au restautant</li>
+                </ul>
             </div>
         </section>
         <section>
