@@ -1,0 +1,44 @@
+.header{
+    width: 100%;
+    height: map-get($height, header );
+    display: flex; 
+    justify-content: center;  
+    @include mobile-only{
+        height: map-get($height, header-mobile);   
+    }
+    &__box{
+        width: 60%;
+        height: map-get($height,header);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center; 
+        @include mobile-only{
+            width: 100%;
+        }
+    }
+    &__btn-retour{
+        color: black; 
+    }
+}
+.footer{
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 1rem;
+    &__titre{
+        color: $clr-police;
+        font-size: 2rem;
+        padding-left: 2.5rem;
+    }
+    &__liste{
+        list-style: none;
+    }
+    &__texte{
+        color: $clr-police;
+    }
+    &__item1{ 
+        padding-right: 15px;
+    }
+    &__item2{
+        padding-right: 9px;
+    }
+}

@@ -1,0 +1,30 @@
+$font: roboto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+$font-titre:shrikhand;
+$clr-primaire: #9356dc;
+$clr-secondaire: #ff79da;
+$clr-tertiaire: #99e2d0;
+$clr-police:white;
+$height:(
+    header:10rem,
+    header-mobile:5rem,
+);
+$breakpoints: (
+    tablette_min:600px,
+    tablette_max:1023px, 
+    mobile:599px
+);
+
+@mixin tablette-only {
+    @media screen and ( min-width: map-get($breakpoints, "tablette_min")) and ( max-width: map-get($breakpoints, "tablette_max")) {
+        @content;
+    }
+}
+@mixin mobile-only {
+    @media screen and (max-width:map-get($breakpoints,mobile)){
+        @content;
+    }
+}
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}

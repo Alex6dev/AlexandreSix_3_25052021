@@ -1,0 +1,11 @@
+{
+  "name": "n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/menu_a_la_française.scss:./css/menu_a_la_française.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

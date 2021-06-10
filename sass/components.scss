@@ -1,50 +1,15 @@
-$font: roboto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-$margin: 1.5rem ;
-$clr-primaire: #9356dc;
-$clr-secondaire: #ff79da;
-$clr-tertiaire: #99e2d0;
-
-@mixin column {
-    display: flex;
-    flex-direction: column;
-    
-}
-h1{
-    font-family: $font;
-}
-h2{
-    font-family: $font;
-}
-h4{
-    font-family: Shrikhand , sans-serif ;
-    color: white;
-    font-size: 2rem;
-    padding-left: 2rem;
-    margin: 0;
-
-}
-p{
-    font-family: $font;
-}
-li{
-    font-family: $font;
-}
-a{
-    text-decoration: none;
-    color: black;
-    font-family: $font;
-}
+/*
 .spinner {
-    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%; 
+    margin: 0;
 }
-/*.spinner::before {
+.spinner::before {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 11;
+    z-index: 20 ;
     overflow: hidden;
     background: black;
     opacity: 0.6;
@@ -60,13 +25,15 @@ a{
     }
     100% { 
         opacity: 0;
+        display: none;
+        z-index:-1;
     }
 }
 .spinner::after {
     box-sizing: border-box;
-    z-index: 12;
+    z-index: 21;
     content: "";
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     margin: -25px 0 0 -25px;
@@ -90,37 +57,34 @@ a{
         transform: rotate(360deg);
         opacity: 0;
     }
-}*/
-
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 10rem;
-    &__box{
-        width: 100%;
-        height: 7rem;
-        text-align: center;
-    }
-    &__logo{
-    width: 60%;
-    max-width: 600px;
-    margin-top: 2rem;
-    }   
 }
+*/
+
 .box__first{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    height: 350px;
+    height: auto;
+
 }
 .box__nav{
     width: 45%;
+    min-width: 700px;
     margin-left: 2rem;
+    
+    @include tablette-only{
+        margin-left: 0;
+
+    }
+    @include mobile-only{
+        min-width: fit-content;
+        margin-left: 0;
+    }
 }
 .box-localisation{
-    display: flex;
-    flex-direction: column;
+    @include column();
     width: 100%;
     
 }
@@ -130,11 +94,10 @@ a{
     background-color: rgba(185, 183, 183, 0.432);
     border-top: 3px solid gray;
     text-align: center;
-    color: black;
     display: flex;
     justify-content: center;
     &__ville{
-        font-size: 20px;
+        font-size: 1.2rem;
     }
 }
 .logo_maps{
@@ -147,10 +110,16 @@ a{
     background-color: rgba(241, 241, 241, 0.973);
     @include column; 
     align-items: center;
+    @include tablette-only{
+        justify-content: space-evenly;
+    }
     &__titre{
         width: 70%;
         text-align: center;
-        margin: 2rem 0 0 0;
+        margin: 2rem 0 0 0;   
+        @include tablette-only{
+            margin: 1rem 0 0 0 ;
+        }
     }
     &__texte{
         width: 90%;
@@ -177,10 +146,12 @@ a{
 .fonctionnement{
     width: 50%;
     height: 25rem;
-    display: flex;
-    flex-direction: column;
+    @include  column();
     justify-content: start;
     align-items: center;
+    @include tablette-only(){
+        margin-top:2rem;
+    };
     
     &__titre{
         margin:0;
@@ -199,10 +170,11 @@ a{
         display: flex;
         width: 100%;
         background-color: rgba(241, 241, 241, 0.973) ;
+        box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.397);
         border-radius: 2rem;
         margin-top: 1rem;
         padding: 2rem 2rem 2rem 0;
-        z-index: 1;
+        z-index: 0;
         position:relative;
         &:hover {
             &::after{
@@ -210,11 +182,8 @@ a{
                 opacity: 0.3;
                 border-radius: 2rem;
             }
-            & + .fonctionnement__item {
-                &::after{
-                    content: "";
-                    opacity: 1;
-                }
+            .fonctionnement__item {
+                color: $clr-primaire;
             }
             
         }
@@ -226,9 +195,9 @@ a{
             bottom: 0;
             left: 0;
             border-radius: 2rem;
-            background-color: $clr-secondaire;
+            background-color: $clr-primaire;
             opacity: 0;
-            z-index: -1;
+            z-index: -10;
             transition: opacity 250ms;
         }
         
@@ -247,27 +216,20 @@ a{
         font-size:1.5rem;
         margin: 0 2rem 0 2rem;
         color: rgb(100, 100, 100);
-        z-index: 1;
         position: relative;
-        &::after{
-            content: "";
-            position:absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            color: $clr-secondaire;
-            opacity: 0;
-            z-index:-1 ;
-            transition: opacity 250ms;
-            
-        }
     }
 }
 .box__menu{
     background-color: rgba(241, 241, 241, 0.973);
     margin: 5rem 2rem 5rem 2rem;
     padding: 2rem;
+    @include tablette-only{
+        margin-top: 1rem;
+    }
+    @include mobile-only{
+        margin: 0; 
+        padding: 0;
+    }
 }
 .box__presentation__menu{
     display: flex;
@@ -276,8 +238,11 @@ a{
     justify-content: space-around;
 }
 .box__menu2{
-    display: flex;
-    flex-direction: column;
+    @include column();
+
+}
+.restaurants{
+    text-align: center;
 
 }
 .lien_menu{
@@ -286,7 +251,11 @@ a{
     max-width: 500px;
     border-radius: 2rem;
     background-color: white;
-    z-index: 2;
+    z-index: 0 ;
+    box-shadow: 1px 1px 20px 1px rgba(128, 128, 128, 0.11);
+    @include mobile-only{
+        margin: 0 ;/*----------------------------*/
+    }
 }
 
 
@@ -308,12 +277,15 @@ a{
         color: #5c8a7e;
         margin-top: 8px  ;
     }
+    @include mobile-only{
+        margin: 0px 0px 10px 100px; /*00000000000000000000000000000000000000000*/
+    }
 }
 .menu__texte{
     margin-left: 2rem;
 }
 .coeur{
-    position: relative;
+    position: absolute;
     margin: -65px 0 0 420px;
     font-size: 2rem;
     z-index: 1;
@@ -322,11 +294,12 @@ a{
         &::after{
             content: "";
             opacity: 1;
+            z-index: 10;
         }
     }
     &::after{
         content: "";
-        z-index:-1;
+        z-index:-10;
         opacity: 0;
         position:absolute;
         top: 0;
@@ -334,23 +307,11 @@ a{
         bottom: 0;
         left: 0;
         color: red;
+        background: linear-gradient($clr-secondaire,$clr-primaire);
         transition: opacity 20ms;
 
     }
+@include mobile-only{
+    margin: 0; /*---------------------------------------------------------------------------*/
 }
-.footer{
-    background-color: rgba(0, 0, 0, 0.842);
-    padding: 1rem;
-    &__liste{
-        list-style: none;
-    }
-    &__texte{
-        color: white;
-    }
-    &__item1{
-        padding-right: 15px;
-    }
-    &__item2{
-        padding-right: 9px;
-    }
 }
