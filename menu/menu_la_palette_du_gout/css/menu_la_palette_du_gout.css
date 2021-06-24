@@ -102,6 +102,12 @@ a {
   }
 }
 
+@media screen and (max-width: 599px) {
+  h3 {
+    font-size: 1rem;
+  }
+}
+
 li {
   list-style-type: none;
 }
@@ -154,7 +160,7 @@ span {
 }
 @media screen and (max-width: 599px) {
   .menu__box-coeur {
-    margin: -2.5rem 0 0 20rem;
+    margin: -2.5rem 0 0 18.5rem;
   }
 }
 .menu__box-coeur:hover .menu__coeur__plein {
@@ -199,7 +205,9 @@ span {
 .menu__photo {
   width: 100%;
   max-width: 1000px;
+  max-height: 42rem;
   border-radius: 5rem 5rem 0 0;
+  object-fit: cover;
 }
 @media screen and (max-width: 599px) {
   .menu__photo {
@@ -212,13 +220,23 @@ span {
   padding: 0 0 0 2rem;
   font-size: 4rem;
 }
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .menu__h1 {
+    font-size: 3.5rem;
+  }
+}
 @media screen and (max-width: 599px) {
   .menu__h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 .menu__h2 {
   padding: 0 0 0 2rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__h2 {
+    font-size: 1.3rem;
+  }
 }
 .menu__lien-article {
   width: 95%;
@@ -294,7 +312,7 @@ span {
   overflow: hidden;
 }
 .menu__lien-article__texte {
-  width: 290px;
+  width: 400px;
   max-height: 5rem;
 }
 .menu__lien-article__confirmer {
@@ -341,4 +359,10 @@ span {
   box-shadow: 2px 2px 5px 3px gray;
 }
 
-/*# sourceMappingURL=menu_a_la_fran%C3%A7aise.css.map */
+@media screen and (max-width: 599px) {
+  main p {
+    font-size: 0.9rem;
+  }
+}
+
+/*# sourceMappingURL=menu_la_palette_du_gout.css.map */

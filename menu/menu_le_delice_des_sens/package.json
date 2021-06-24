@@ -1,0 +1,11 @@
+{
+  "name": "n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/menu_le_delice_des_sens.scss:./css/menu_le_delice_des_sens.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

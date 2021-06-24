@@ -1,0 +1,11 @@
+{
+  "name": "n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/menu_la_palette_du_gout.scss:./css/menu_la_palette_du_gout.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

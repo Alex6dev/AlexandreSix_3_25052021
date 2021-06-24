@@ -1,3 +1,19 @@
+@keyframes coeurplein {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes coeuropa {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .header {
   width: 100%;
   height: 10rem;
@@ -22,9 +38,6 @@
     width: 100%;
   }
 }
-.header__btn-retour {
-  color: black;
-}
 
 .footer {
   background-color: rgba(0, 0, 0, 0.842);
@@ -35,11 +48,9 @@
   font-size: 2rem;
   padding-left: 2.5rem;
 }
-.footer__liste {
-  list-style: none;
-}
 .footer__texte {
   color: white;
+  margin-left: 2rem;
 }
 .footer__item1 {
   padding-right: 15px;
@@ -238,6 +249,10 @@ a {
   border-radius: 30px;
   box-shadow: 1px 1px 5px 1px gray;
 }
+.reservation__lien:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 2px 2px 5px 3px gray;
+}
 
 .fonctionnement {
   width: 50%;
@@ -246,6 +261,11 @@ a {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+}
+@media screen and (max-width: 599px) {
+  .fonctionnement {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
   .fonctionnement {
@@ -336,6 +356,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+@media screen and (max-width: 599px) {
+  .box__presentation__menu {
+    width: 95%;
+  }
+}
 
 .box__menu2 {
   display: flex;
@@ -354,11 +379,11 @@ a {
   background-color: white;
   z-index: 0;
   box-shadow: 1px 1px 20px 1px rgba(128, 128, 128, 0.11);
+  position: relative;
 }
 @media screen and (max-width: 599px) {
   .lien_menu {
-    margin: 0;
-    /*----------------------------*/
+    margin: 1rem 0 1rem 0.6rem;
   }
 }
 
@@ -384,45 +409,58 @@ a {
 }
 @media screen and (max-width: 599px) {
   .nouveau {
-    margin: 0px 0px 10px 100px;
-    /*00000000000000000000000000000000000000000*/
+    margin: -190px 0px 0px 265px;
   }
+}
+
+.box__legende {
+  display: flex;
 }
 
 .menu__texte {
   margin-left: 2rem;
+  width: 40%;
+}
+@media screen and (max-width: 599px) {
+  .menu__texte {
+    width: 50%;
+  }
 }
 
 .coeur {
   position: absolute;
-  margin: -65px 0 0 420px;
+  margin: 25px 0px 0px 200px;
   font-size: 2rem;
   z-index: 1;
   color: black;
-}
-.coeur:hover::after {
-  content: "";
+  background-color: white;
   opacity: 1;
-  z-index: 10;
-}
-.coeur::after {
-  content: "";
-  z-index: -10;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  color: red;
-  background: linear-gradient(#ff79da, #9356dc);
-  transition: opacity 20ms;
 }
 @media screen and (max-width: 599px) {
   .coeur {
-    margin: 0;
-    /*---------------------------------------------------------------------------*/
+    margin: 30px 0 0 100px;
   }
+}
+.coeur__plein {
+  position: absolute;
+  margin: 25px 0 0 200px;
+  font-size: 2rem;
+  z-index: 1;
+  color: #9356dc;
+  background: white;
+  transform: scale(0);
+}
+@media screen and (max-width: 599px) {
+  .coeur__plein {
+    margin: 30px 0 0 100px;
+  }
+}
+
+.box__coeur:hover .coeur__plein {
+  animation: coeurplein 1s ease-in-out both;
+}
+.box__coeur:hover .coeur {
+  animation: coeuropa 500ms ease-in-out both;
 }
 
 /*# sourceMappingURL=style.css.map */

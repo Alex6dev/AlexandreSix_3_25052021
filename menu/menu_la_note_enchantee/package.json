@@ -1,0 +1,12 @@
+{
+  "name": "menu_la_note_enchantee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/menu_la_note_enchantee.scss:./css/menu_la_note_enchantee.css"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}

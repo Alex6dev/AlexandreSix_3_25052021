@@ -60,6 +60,7 @@
 }
 */
 
+
 .box__first{
     display: flex;
     flex-direction: row;
@@ -134,11 +135,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient($clr-secondaire,$clr-primaire);
+        @include gradient;
         text-align: center;
         color: white;
         border-radius: 30px;
         box-shadow: 1px 1px 5px 1px gray;
+        &:hover{
+            @include light($colour:$clr-primaire,$colourb:$clr-secondaire);
+            box-shadow: 2px 2px 5px 3px gray;
+            
+        }
     }
 
 }
@@ -149,6 +155,9 @@
     @include  column();
     justify-content: start;
     align-items: center;
+    @include mobile-only(){
+            width: 100%;
+        };
     @include tablette-only(){
         margin-top:2rem;
     };
@@ -160,6 +169,7 @@
     &__box-liste{
         @include column();
         justify-content: space-around;
+        
     }  
     &__liste{
         list-style: none;
@@ -236,9 +246,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    @include mobile-only{
+        width: 95%;
+    }
 }
 .box__menu2{
     @include column();
+    
 
 }
 .restaurants{
@@ -253,8 +267,9 @@
     background-color: white;
     z-index: 0 ;
     box-shadow: 1px 1px 20px 1px rgba(128, 128, 128, 0.11);
+    position: relative;
     @include mobile-only{
-        margin: 0 ;/*----------------------------*/
+        margin: 1rem 0 1rem 0.6rem;
     }
 }
 
@@ -278,40 +293,51 @@
         margin-top: 8px  ;
     }
     @include mobile-only{
-        margin: 0px 0px 10px 100px; /*00000000000000000000000000000000000000000*/
+        margin: -190px 0px 0px 265px;
     }
+}
+.box__legende{
+    display: flex;
+
 }
 .menu__texte{
     margin-left: 2rem;
+    width: 40%;
+    @include mobile-only{
+        width: 50%;
+    }
 }
 .coeur{
     position: absolute;
-    margin: -65px 0 0 420px;
+    margin: 25px 0px 0px 200px;
     font-size: 2rem;
     z-index: 1;
     color: black;
-    &:hover{
-        &::after{
-            content: "";
-            opacity: 1;
-            z-index: 10;
+    background-color: white;
+    @include mobile-only{
+        margin: 30px 0 0 100px;
+    }
+    opacity: 1;
+    &__plein{
+        position: absolute;
+        margin: 25px 0 0 200px;
+        font-size: 2rem;
+        z-index: 1;
+        color:$clr-primaire;
+        background:white ;
+        transform: scale(0);
+        @include mobile-only{
+            margin: 30px 0 0 100px;
         }
     }
-    &::after{
-        content: "";
-        z-index:-10;
-        opacity: 0;
-        position:absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        color: red;
-        background: linear-gradient($clr-secondaire,$clr-primaire);
-        transition: opacity 20ms;
-
-    }
-@include mobile-only{
-    margin: 0; /*---------------------------------------------------------------------------*/
 }
+.box__coeur{
+    &:hover{
+        & .coeur__plein{
+            animation: coeurplein 1s ease-in-out both;
+        }
+        & .coeur{
+            animation: coeuropa 500ms ease-in-out both;
+        }
+    }
 }

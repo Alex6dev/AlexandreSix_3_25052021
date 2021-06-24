@@ -1,5 +1,5 @@
 $font: roboto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-$font-titre:shrikhand;
+$font-titre: shrikhand;
 $clr-primaire: #9356dc;
 $clr-secondaire: #ff79da;
 $clr-tertiaire: #99e2d0;
@@ -27,4 +27,28 @@ $breakpoints: (
 @mixin column {
     display: flex;
     flex-direction: column;
+}
+@mixin light ($colour,$colourb) {
+    $colour:lighten($colour,5%);
+    $colourb:lighten($colourb,5%);
+    background: linear-gradient($colourb,$colour);
+}
+@mixin gradient {
+    background: linear-gradient($clr-secondaire,$clr-primaire);
+}
+@keyframes coeurplein {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes coeuropa {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
