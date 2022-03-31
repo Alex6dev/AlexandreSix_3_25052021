@@ -16,6 +16,7 @@ Home page:
 restaurant page example:
 [click here to see the model](https://github.com/Alex6dev/AlexandreSix_3_25052021/blob/master/resourceClient/Maquettes%20Ohmyfood/maquettes/Menu%20-%20A%E2%95%A0%C3%87%20la%20franc%E2%95%A0%C2%BAaise.png)
 
+The resourceClient folder corresponds to the resource provided by the client
 
 ## 2- Project
 
