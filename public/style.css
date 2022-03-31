@@ -96,67 +96,66 @@ a {
   font-family: roboto, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-/*
 .spinner {
-    width: 100%;
-    height: 100%; 
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
-.spinner::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 20 ;
-    overflow: hidden;
-    background: black;
-    opacity: 0.6;
-    animation: back 3s linear forwards;
 
+.spinner::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  overflow: hidden;
+  background: black;
+  opacity: 0.6;
+  animation: back 3s linear forwards;
 }
+
 @keyframes back {
-    0% { 
-        opacity: 0.6;
-    }
-    80%{
-        opacity: 0.6;
-    }
-    100% { 
-        opacity: 0;
-        display: none;
-        z-index:-1;
-    }
+  0% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
 }
 .spinner::after {
-    box-sizing: border-box;
-    z-index: 21;
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin: -25px 0 0 -25px;
-    border: 3px solid $clr-primaire;
-    border-top: 3px solid $clr-secondaire;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: custom-loading 2s linear 1 forwards;
+  box-sizing: border-box;
+  z-index: 21;
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  border: 3px solid #9356dc;
+  border-top: 3px solid #ff79da;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: custom-loading 2s linear 1 forwards;
+}
 
-}
 @keyframes custom-loading {
-    0% { 
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-    80%{
-        opacity: 0.8;
-    }
-    100% { 
-        transform: rotate(360deg);
-        opacity: 0;
-    }
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
 }
-*/
 .box__first {
   display: flex;
   flex-direction: row;
@@ -401,7 +400,7 @@ a {
   height: 35px;
   border-radius: 5px;
   position: absolute;
-  margin: -190px 0 0 385px;
+  margin: -190px 0 0 60%;
 }
 .nouveau p {
   color: #5c8a7e;
@@ -429,7 +428,7 @@ a {
 
 .coeur {
   position: absolute;
-  margin: 25px 0px 0px 200px;
+  margin: 25px 0px 0px 35%;
   font-size: 2rem;
   z-index: 1;
   color: black;
